@@ -1,10 +1,12 @@
 #!/bin/bash
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Develovers » Fitunnel Project
-# whatsapp   » wa.me/+6285223659782
+# Develovers » NIXY Project
+# telegram   » https://nixy_store
+# whatsapp   » wa.me/+6281324481206
+# Email      » info@nixystore.my.id
 # System Request : Debian 9+/Ubuntu 18.04+/20+
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# AlfiStoreVPN (Reedit Nixy v2.4)
+# NIXY Project
 
 Green="\e[92;1m"
 RED="\033[31m"
@@ -31,8 +33,8 @@ clear;clear;clear
 
 # // Banner
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "  Ini Akan Mempercepat Pengaturan Server VPN di Server Anda"
-echo -e "  Developer Fitunnel Projects ${YELLOW}(${NC}${green} AlfiStoreVPN ${NC}${YELLOW})${NC}"
+echo -e "  This Will Quick Setup VPN Server On Your Server"
+echo -e "  Developer NIXY Projct - VPN STORE ${YELLOW}(${NC}${green} NIXY STORE ID ${NC}${YELLOW})${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 sleep 2
@@ -40,40 +42,40 @@ sleep 2
 
 # // Checking Os Architecture
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
-    echo -e "${OK} Arsitektur Anda Didukung ( ${green}$( uname -m )${NC} )"
+    echo -e "${OK} Your Architecture Is Supported ( ${green}$( uname -m )${NC} )"
 else
-    echo -e "${EROR} Arsitektur Anda Tidak Didukung ( ${YELLOW}$( uname -m )${NC} )"
+    echo -e "${EROR} Your Architecture Is Not Supported ( ${YELLOW}$( uname -m )${NC} )"
     exit 1
 fi
 
 # // Checking System
 if [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "ubuntu" ]]; then
-    echo -e "${OK} OS Anda Didukung ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${OK} Your OS Is Supported ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 elif [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "debian" ]]; then
-    echo -e "${OK} OS Anda Didukung ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${OK} Your OS Is Supported ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 else
-    echo -e "${EROR} OS Anda Tidak Didukung ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${EROR} Your OS Is Not Supported ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
     exit 1
 fi
 
 # // IP Address Validating
 if [[ $IP == "" ]]; then
-    echo -e "${EROR} IP ANDA ( ${YELLOW}Not Detected${NC} )"
+    echo -e "${EROR} YOUR IP ( ${YELLOW}Not Detected${NC} )"
 else
-    echo -e "${OK} IP ANDA ( ${green}$IP${NC} )"
+    echo -e "${OK} YOUR IP ( ${green}$IP${NC} )"
 fi
 
 # // Validate Successfull
 echo ""
-read -p "$( echo -e "Tekan ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} Untuk Mulai") "
+read -p "$( echo -e "PRESS ${GRAY}[ ${NC}${green}ENTER${NC} ${GRAY}]${NC} To start") "
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
-		echo "Anda perlu menjalankan skrip ini sebagai root"
+		echo "You need to run this script as root"
 		exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ tidak didukung"
+		echo "OpenVZ is not supported"
 		exit 1
 fi
 red='\e[1;31m'
@@ -88,7 +90,7 @@ gem install lolcat
 apt install wondershaper -y
 clear
 # REPO    
-    REPO="https://github.com/Fitunnel/AutoScript/"
+    REPO="https://vip.nixystore.my.id/"
 
 ####
 start=$(date +%s)
@@ -180,7 +182,7 @@ elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"/
     sudo apt-get update
     apt-get -y install haproxy=1.8.\*
 else
-    echo -e " OS Kamu Tidak Didukung ($(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g') )"
+    echo -e " Your OS Is Not Supported ($(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g') )"
     exit 1
 fi
 }
@@ -239,15 +241,15 @@ function pasang_domain() {
 echo -e ""
 clear
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e " \e[1;32mSilakan Pilih Jenis Domain Di Bawah Ini \e[0m"
+echo -e " \e[1;32mPlease Select a Domain Type Below \e[0m"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e " \e[1;32m1)\e[0m Menggunakan Domain Sendiri (direkomendasikan)"
-echo -e " \e[1;32m2)\e[0m Menggunakan Domain script"
+echo -e " \e[1;32m1)\e[0m Menggunakan Domain Sendiri"
+echo -e " \e[1;32m2)\e[0m Menggunakan Domain script (direkomendasikan)"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-read -p " Silakan pilih nomor 1-2 atau Tombol Apa Saja (Acak) : " host
+read -p " Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
-echo -e " \e[1;32mSilakan Masukkan Subdomain Anda $NC"
+echo -e " \e[1;32mPlease Enter Your Subdomain $NC"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -p " Masukan Domain : " host1
@@ -259,11 +261,11 @@ echo $host1 > /root/domain
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget ${REPO}main/cf.sh && chmod +x cf.sh && ./cf.sh
+wget ${REPO}files/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
 clear
 else
-print_install "Subdomain/Domain Acak Digunakan"
+print_install "Random Subdomain/Domain is Used"
 clear
     fi
 }
@@ -275,7 +277,7 @@ restart_system(){
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
-izinsc="https://github.com/Fitunnel/AutoScript/main/ip"
+izinsc="https://github.com/Fitunnel/AutoScript/ip"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
@@ -328,7 +330,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>AUTOSCRIPT TUNNELING  AlfiStoreVPN</b>
+<b>AUTOSCRIPT TUNNELING  NIXY STORE</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <i>Automatic Notifications From Palestina</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ORDER","url":"https://wa.me/+6281324481206"}]]}' 
@@ -465,7 +467,7 @@ print_success "Konfigurasi Packet"
 function ssh(){
 clear
 print_install "Memasang Password SSH"
-wget -O /etc/pam.d/common-password "${REPO}main/password"
+wget -O /etc/pam.d/common-password "${REPO}files/password"
 chmod +x /etc/pam.d/common-password
 
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
@@ -538,7 +540,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit IP & Quota"
-wget -q https://github.com/Fitunnel/AutoScript/main/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://vip.nixystore.my.id/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
