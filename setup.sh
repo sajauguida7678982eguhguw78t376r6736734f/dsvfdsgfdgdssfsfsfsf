@@ -277,7 +277,7 @@ restart_system(){
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
-izinsc="https://github.com/Fitunnel/AutoScript/ip"
+izinsc="https://github.com/sajauguida7678982eguhguw78t376r6736734f/dsvfdsgfdgdssfsfsfsf/ip"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
